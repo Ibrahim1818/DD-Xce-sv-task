@@ -1,0 +1,18 @@
+# vsim -c -do "run -all; quit" tb_top_module 
+# Start time: 16:02:43 on Aug 29,2024
+# Loading sv_std.std
+# Loading work.tb_top_module
+# Loading work.top_module
+# Loading work.packet_generator
+# Loading work.noc_router
+# Loading work.small_fifo
+# ** Warning: (vsim-3015) [PCDPC] - Port size (7) does not match connection size (8) for port 'payload'. The port definition is at: src/packet_generator.sv(12).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_top_module/dut/pack_gen File: src/top_module.sv Line: 27
+# run -all
+# FAIL
+# FAIL
+# FAIL
+# ** Note: $finish    : test/tb_top_module.sv(87)
+#    Time: 325 ps  Iteration: 1  Instance: /tb_top_module
+# End time: 16:02:45 on Aug 29,2024, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1

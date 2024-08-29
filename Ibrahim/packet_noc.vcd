@@ -1,0 +1,579 @@
+$date
+	Thu Aug 29 16:02:45 2024
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module tb_top_module $end
+$var parameter 32 ! WIDTH_TYPE $end
+$var parameter 32 " WIDTH_PAYLOAD $end
+$var parameter 32 # WIDTH_PACKET $end
+$var parameter 32 $ BURST_SIZE $end
+$var reg 1 % clk $end
+$var reg 1 & rst $end
+$var reg 2 ' dest_addr [1:0] $end
+$var reg 2 ( pack_type [1:0] $end
+$var reg 8 ) payload [7:0] $end
+$var reg 1 * eop $end
+$var reg 13 + destination_out [12:0] $end
+
+$scope task reset_sequence $end
+$upscope $end
+
+$scope task init_sequence $end
+$upscope $end
+
+$scope task drive_inputs $end
+$var reg 2 , d_addr [1:0] $end
+$var reg 2 - p_type [1:0] $end
+$var reg 8 . p_data [7:0] $end
+$var reg 1 / eop_i $end
+$upscope $end
+
+$scope task monitor_output $end
+$upscope $end
+
+$scope task test_sequence $end
+$upscope $end
+
+$scope module dut $end
+$var parameter 32 0 WIDTH_TYPE $end
+$var parameter 32 1 WIDTH_PAYLOAD $end
+$var parameter 32 2 WIDTH_PACKET $end
+$var parameter 32 3 BURST_SIZE $end
+$var wire 1 4 clk $end
+$var wire 1 5 rst $end
+$var wire 1 6 dest_addr [1] $end
+$var wire 1 7 dest_addr [0] $end
+$var wire 1 8 pack_type [1] $end
+$var wire 1 9 pack_type [0] $end
+$var wire 1 : payload [7] $end
+$var wire 1 ; payload [6] $end
+$var wire 1 < payload [5] $end
+$var wire 1 = payload [4] $end
+$var wire 1 > payload [3] $end
+$var wire 1 ? payload [2] $end
+$var wire 1 @ payload [1] $end
+$var wire 1 A payload [0] $end
+$var wire 1 B eop $end
+$var reg 13 C destination_out [12:0] $end
+$var reg 13 D packet [12:0] $end
+$var reg 1 E valid $end
+$var reg 1 F last $end
+$var reg 1 G ready $end
+
+$scope module pack_gen $end
+$var parameter 32 H WIDTH_TYPE $end
+$var parameter 32 I WIDTH_PAYLOAD $end
+$var parameter 32 J WIDTH_PACKET $end
+$var parameter 32 K BURST_SIZE $end
+$var wire 1 4 clk $end
+$var wire 1 5 rst $end
+$var wire 1 6 dest_addr [1] $end
+$var wire 1 7 dest_addr [0] $end
+$var wire 1 8 pack_type [1] $end
+$var wire 1 9 pack_type [0] $end
+$var wire 1 ; payload [0] $end
+$var wire 1 < payload [1] $end
+$var wire 1 = payload [2] $end
+$var wire 1 > payload [3] $end
+$var wire 1 ? payload [4] $end
+$var wire 1 @ payload [5] $end
+$var wire 1 A payload [6] $end
+$var wire 1 B eop $end
+$var wire 1 L ready $end
+$var reg 13 M packet [12:0] $end
+$var reg 1 N valid $end
+$var reg 1 O last $end
+$var reg 13 P packet_holder [12:0] $end
+$var reg 1 Q burst_count $end
+$var reg 1 R count $end
+$var reg 1 S burst_done $end
+$upscope $end
+
+$scope module noc_route $end
+$var parameter 32 T WIDTH_PACKET $end
+$var wire 1 4 clk $end
+$var wire 1 5 rst $end
+$var wire 1 U last $end
+$var wire 1 V packet [12] $end
+$var wire 1 W packet [11] $end
+$var wire 1 X packet [10] $end
+$var wire 1 Y packet [9] $end
+$var wire 1 Z packet [8] $end
+$var wire 1 [ packet [7] $end
+$var wire 1 \ packet [6] $end
+$var wire 1 ] packet [5] $end
+$var wire 1 ^ packet [4] $end
+$var wire 1 _ packet [3] $end
+$var wire 1 ` packet [2] $end
+$var wire 1 a packet [1] $end
+$var wire 1 b packet [0] $end
+$var wire 1 c valid $end
+$var reg 1 d ready $end
+$var reg 13 e destination_out [12:0] $end
+$var reg 2 f state [1:0] $end
+$var reg 2 g next_state [1:0] $end
+$var reg 1 h decode_en $end
+$var reg 1 i full $end
+$var reg 1 j empty $end
+$var reg 1 k wr_en $end
+$var reg 1 l rd_en $end
+$var reg 13 m rd_data [12:0] $end
+$var reg 13 n wr_data [12:0] $end
+$var reg 2 o dest [1:0] $end
+$var reg 2 p pack [1:0] $end
+$var reg 1 q route_done $end
+$var reg 1 r write_dest $end
+$var wire 1 s payload $end
+
+$scope module fifo $end
+$var parameter 32 t DEPTH $end
+$var parameter 32 u WIDTH_PACKET $end
+$var wire 1 4 clk $end
+$var wire 1 5 rst $end
+$var wire 1 v wr_en $end
+$var wire 1 w wr_data [12] $end
+$var wire 1 x wr_data [11] $end
+$var wire 1 y wr_data [10] $end
+$var wire 1 z wr_data [9] $end
+$var wire 1 { wr_data [8] $end
+$var wire 1 | wr_data [7] $end
+$var wire 1 } wr_data [6] $end
+$var wire 1 ~ wr_data [5] $end
+$var wire 1 !! wr_data [4] $end
+$var wire 1 "! wr_data [3] $end
+$var wire 1 #! wr_data [2] $end
+$var wire 1 $! wr_data [1] $end
+$var wire 1 %! wr_data [0] $end
+$var wire 1 &! rd_en $end
+$var reg 13 '! rd_data [12:0] $end
+$var reg 1 (! full $end
+$var reg 1 )! empty $end
+$var reg 3 *! wr_ptr [2:0] $end
+$var reg 3 +! rd_ptr [2:0] $end
+$var reg 3 ,! fifo_count [2:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0&
+b0 '
+b0 (
+b0 )
+0*
+bx +
+bx C
+b0 D
+0E
+0F
+1G
+b0 M
+0N
+0O
+b0 P
+1Q
+1R
+0S
+1d
+bx e
+b0 f
+b0 g
+0h
+0i
+1j
+0k
+0l
+bx m
+b0 n
+b0 o
+b0 p
+0q
+0r
+bx '!
+0(!
+1)!
+b0 *!
+b0 +!
+b0 ,!
+bx ,
+bx -
+bx .
+x/
+b10 !
+b1000 "
+b1101 #
+b1 $
+b10 0
+b1000 1
+b1101 2
+b1 3
+b10 H
+b1000 I
+b1101 J
+b1 K
+b1101 T
+b100 t
+b1101 u
+0s
+04
+05
+07
+06
+09
+08
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+0B
+1L
+0b
+0a
+0`
+0_
+0^
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+0c
+0U
+0v
+0&!
+0%!
+0$!
+0#!
+0"!
+0!!
+0~
+0}
+0|
+0{
+0z
+0y
+0x
+0w
+$end
+#5
+1%
+14
+#10
+0%
+04
+#15
+1%
+14
+#20
+0%
+04
+#25
+1%
+14
+#30
+0%
+04
+#35
+1%
+14
+#40
+0%
+04
+#45
+1%
+14
+#50
+0%
+04
+#55
+1&
+b1 ,
+b1 -
+b10101011 .
+1/
+b1 '
+b1 (
+b10101011 )
+1*
+1%
+1A
+1@
+1>
+1<
+1:
+19
+17
+1B
+b101010110101 P
+15
+14
+1N
+1O
+0Q
+b101010110101 M
+b101010110101 D
+1S
+1F
+1E
+1b
+1`
+1^
+1]
+1[
+1Y
+1W
+b101010110101 n
+1s
+1%!
+1#!
+1!!
+1~
+1|
+1z
+1x
+1U
+1c
+b1 g
+1l
+1h
+b1 o
+b1 p
+1&!
+0l
+0h
+1l
+1h
+#60
+0%
+04
+#65
+1%
+14
+0N
+0O
+b1 f
+0F
+0E
+0U
+0c
+0l
+0d
+0h
+b10 g
+1r
+b0 o
+b0 p
+0G
+0&!
+0L
+0r
+1r
+#70
+0%
+04
+#75
+1%
+14
+1q
+b1 e
+b10 f
+b1 C
+b1 +
+b0 g
+1d
+0r
+1G
+1L
+#80
+0%
+04
+#85
+1%
+14
+b0 f
+#90
+0%
+04
+#95
+1%
+14
+#100
+0%
+04
+#105
+1%
+14
+#110
+0%
+04
+#115
+1%
+14
+#120
+0%
+04
+#125
+1%
+14
+#130
+0%
+04
+#135
+1%
+14
+#140
+0%
+04
+#145
+1%
+14
+b10 ,
+b10 -
+b11001101 .
+b10 '
+b10 (
+b11001101 )
+0@
+1?
+0<
+1;
+09
+18
+07
+16
+b110011011010 P
+#150
+0%
+04
+#155
+1%
+14
+#160
+0%
+04
+#165
+1%
+14
+#170
+0%
+04
+#175
+1%
+14
+#180
+0%
+04
+#185
+1%
+14
+#190
+0%
+04
+#195
+1%
+14
+#200
+0%
+04
+#205
+1%
+14
+#210
+0%
+04
+#215
+1%
+14
+#220
+0%
+04
+#225
+1%
+14
+b11 ,
+b11 -
+b11101111 .
+b11 '
+b11 (
+b11101111 )
+1@
+1<
+19
+17
+b111011111111 P
+#230
+0%
+04
+#235
+1%
+14
+#240
+0%
+04
+#245
+1%
+14
+#250
+0%
+04
+#255
+1%
+14
+#260
+0%
+04
+#265
+1%
+14
+#270
+0%
+04
+#275
+1%
+14
+#280
+0%
+04
+#285
+1%
+14
+#290
+0%
+04
+#295
+1%
+14
+#300
+0%
+04
+#305
+1%
+14
+#310
+0%
+04
+#315
+1%
+14
+#320
+0%
+04
+#325
+1%
+14
