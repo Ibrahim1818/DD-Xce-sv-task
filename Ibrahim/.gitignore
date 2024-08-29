@@ -1,0 +1,21 @@
+
+# Simulation Files
+*.vvp
+*.vcd
+*.xml
+*obj_dir/
+*venv/
+*sim_build/
+*__pycache__/
+*.stamp.verilate
+
+
+# Ignore ModelSim/QuestaSim log files and work directories
+transcript
+*.log
+work/
+*.wlf
+modelsim.ini
+vsim.wlf
+*.tmp
+*.out
